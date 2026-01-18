@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Confidentiality Modal</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 40px;
+      background: #f9fafb;
+    }
+    .test-info {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .test-info h2 {
+      margin-top: 0;
+      color: #10b981;
+    }
+    .test-info ul {
+      margin: 12px 0;
+      padding-left: 24px;
+    }
+    .test-info li {
+      margin: 8px 0;
+      color: #4b5563;
+    }
+    .demo-btn {
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .demo-btn:hover {
+      background: #059669;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-info">
+    <h2>✅ Set Confidentiality Modal - Implementation Complete</h2>
+
+    <h3>Modal Features:</h3>
+    <ul>
+      <li><strong>Public:</strong> Assignees section hidden, shows info message</li>
+      <li><strong>Confidential/Secret/Top Secret:</strong> Mandatory "Assignees*" section appears</li>
+      <li><strong>Searchable Multi-Select:</strong> Typeahead dropdown with 10 mock users</li>
+      <li><strong>Selected Users:</strong> Shown as removable emerald chips</li>
+      <li><strong>Validation:</strong> Requires at least 1 assignee for restricted levels</li>
+      <li><strong>Dynamic Clearing:</strong> Switching to Public auto-clears assignees</li>
+      <li><strong>Button State:</strong> Confirm button disabled until valid</li>
+      <li><strong>Error Display:</strong> Shows "Please select at least one assignee" when invalid</li>
+    </ul>
+
+    <h3>How to Test:</h3>
+    <ol>
+      <li>Navigate to the "My Files" page in the application</li>
+      <li>Click the "Upload File" button (top right)</li>
+      <li>Select any file from your system</li>
+      <li>The "Set Confidentiality" modal will open</li>
+      <li>Select "Secret" or "Top Secret" from the dropdown</li>
+      <li>The "Assignees*" section will appear below</li>
+      <li>Search and select users (required)</li>
+      <li>The "Confirm & Upload" button will enable once assignees are selected</li>
+    </ol>
+
+    <h3>Integration Points:</h3>
+    <ul>
+      <li>✅ Modal component: <code>src/components/SetConfidentialityModal.tsx</code></li>
+      <li>✅ My Files integration: <code>src/components/MyFiles.tsx</code></li>
+      <li>✅ Upload flow: Lines 91-115 (MyFiles.tsx)</li>
+      <li>✅ Confirm handler: Lines 117-136 (MyFiles.tsx)</li>
+      <li>✅ Edit flow: Lines 138-142 (MyFiles.tsx)</li>
+      <li>✅ Modal render: Lines 844-856 (MyFiles.tsx)</li>
+    </ul>
+
+    <a href="/" class="demo-btn">Open Application</a>
+  </div>
+
+  <div class="test-info">
+    <h3>🔍 Quick Verification Steps:</h3>
+    <ol>
+      <li><strong>Check browser console:</strong> Open DevTools (F12) for any errors</li>
+      <li><strong>Clear cache:</strong> Hard refresh (Ctrl+Shift+R or Cmd+Shift+R)</li>
+      <li><strong>Test upload flow:</strong> My Files → Upload File → Select file → Set Confidentiality modal opens</li>
+      <li><strong>Test dropdown:</strong> Select "Secret" → Assignees section should appear immediately</li>
+      <li><strong>Test validation:</strong> Button should be disabled (gray) until assignee selected</li>
+      <li><strong>Test switching:</strong> Select Secret → add user → switch to Public → assignees should clear</li>
+    </ol>
+  </div>
+</body>
+</html>
